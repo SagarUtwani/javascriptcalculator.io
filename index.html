@@ -33,66 +33,12 @@
             <br>
             <button class="btns" id="btnadd" onclick="onclbtnadd()">+</button>
             <button class="btns" id="btnsubs" onclick="onclbtnsub()">-</button>
-            <button class="btns" id="btnequal" onclick="">=</button>
+            <button class="btns" id="btnequal" onclick="onclbtnequal()">=</button>
         </div>
     </div>
-
+<script src="script.js"></script>
     <script>
-        let value = "";
-        let calcvalue = "";
-
-        function settextareavalue(val) {
-            calcvalue += val;
-            value += val;
-            document.getElementById("txtarea").value = value;
-        }
-        function onclbtn1() {
-            settextareavalue("1")
-        }
-        function onclbtn2() {
-            settextareavalue("2")
-        }
-        function onclbtn3() {
-            settextareavalue("3")
-        }
-        function onclbtn4() {
-            settextareavalue("4")
-        }
-        function onclbtn5() {
-            settextareavalue("5")
-        }
-        function onclbtn6() {
-            settextareavalue("6")
-        }
-        function onclbtn7() {
-            settextareavalue("7")
-        }
-        function onclbtn8() {
-            settextareavalue("8")
-        }
-        function onclbtn9() {
-            settextareavalue("9")
-        }
-        function onclbtn0() {
-            settextareavalue("0")
-        }
-        function onclbtnadd() {
-            calcvalue += "+";
-            value = "+";
-            document.getElementById("txtarea").value = value;
-            console.log(calcvalue);
-        }
-        function onclbtnsub() {
-
-        }
-        function onclbtnmult() {
-
-        }
-        function onclbtndiv() {
-
-        }
-
-
+        
     </script>
 </body>
 

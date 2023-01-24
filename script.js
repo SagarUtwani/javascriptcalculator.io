@@ -1,6 +1,7 @@
 let value = "";
 let calcvalue = "";
 let signoperator = "";
+var valueArr;
 
 function settextareavalue(val) {
     if (value == "+" || value == "-" || value == "x" || value == "/" || value == "*") {
@@ -75,17 +76,17 @@ function onclbtnequal() {
 }
 
 function splitvalue() {
-    if (signoperator == "-"){
-
+    if (signoperator == "+") {
+        valueArr = calcvalue.split("+");
     }
-    else if (signoperator == "-"){
-
+    else if (signoperator == "-") {
+        valueArr = calcvalue.split("-");
     }
-    else if (signoperator == "-"){
-
+    else if (signoperator == "*") {
+        valueArr = calcvalue.split("*");
     }
-    else if (signoperator == "-"){
-
+    else if (signoperator == "/") {
+        valueArr = calcvalue.split("/");
     }
-        }
+}
 

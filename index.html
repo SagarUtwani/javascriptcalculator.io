@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +8,92 @@
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
+
 <body>
     <div class="calccontainer">
         <div class="txtcontainer">
-            <textarea name="" id="-txtarea" cols="30" rows="1" readonly="true"></textarea>
+            <textarea name="" id="txtarea" cols="30" rows="1" readonly="true"></textarea>
         </div>
         <div class="btncontainer">
-            <button class="btns">1</button>
-            <button class="btns">2</button>
-            <button class="btns">3</button>
+            <button class="btns" id="btn1" onclick="onclbtn1()">1</button>
+            <button class="btns" id="btn2" onclick="onclbtn2()">2</button>
+            <button class="btns" id="btn3" onclick="onclbtn3()">3</button>
             <br>
-            <button class="btns">4</button>
-            <button class="btns">5</button>
-            <button class="btns">6</button>
+            <button class="btns" id="btn4" onclick="onclbtn4()">4</button>
+            <button class="btns" id="btn5" onclick="onclbtn5()">5</button>
+            <button class="btns" id="btn6" onclick="onclbtn6()">6</button>
             <br>
-            <button class="btns">7</button>
-            <button class="btns">8</button>
-            <button class="btns">9</button>
+            <button class="btns" id="btn7" onclick="onclbtn7()">7</button>
+            <button class="btns" id="btn8" onclick="onclbtn8()">8</button>
+            <button class="btns" id="btn9" onclick="onclbtn9()">9</button>
             <br>
-            <button class="btns">0</button>
-            <button class="btns">/</button>
-            <button class="btns">*</button>
+            <button class="btns" id="btn0" onclick="onclbtn0()">0</button>
+            <button class="btns" id="btndivide" onclick="onclbtndiv()">/</button>
+            <button class="btns" id="btnmult" onclick="onclbtnmult()">*</button>
             <br>
-            <button class="btns">+</button>
-            <button class="btns">-</button>
-            <button class="btns">=</button>
+            <button class="btns" id="btnadd" onclick="onclbtnadd()">+</button>
+            <button class="btns" id="btnsubs" onclick="onclbtnsub()">-</button>
+            <button class="btns" id="btnequal" onclick="">=</button>
         </div>
     </div>
+
+    <script>
+        let value = "";
+        let calcvalue = "";
+
+        function settextareavalue(val) {
+            calcvalue += val;
+            value += val;
+            document.getElementById("txtarea").value = value;
+        }
+        function onclbtn1() {
+            settextareavalue("1")
+        }
+        function onclbtn2() {
+            settextareavalue("2")
+        }
+        function onclbtn3() {
+            settextareavalue("3")
+        }
+        function onclbtn4() {
+            settextareavalue("4")
+        }
+        function onclbtn5() {
+            settextareavalue("5")
+        }
+        function onclbtn6() {
+            settextareavalue("6")
+        }
+        function onclbtn7() {
+            settextareavalue("7")
+        }
+        function onclbtn8() {
+            settextareavalue("8")
+        }
+        function onclbtn9() {
+            settextareavalue("9")
+        }
+        function onclbtn0() {
+            settextareavalue("0")
+        }
+        function onclbtnadd() {
+            calcvalue += "+";
+            value = "+";
+            document.getElementById("txtarea").value = value;
+            console.log(calcvalue);
+        }
+        function onclbtnsub() {
+
+        }
+        function onclbtnmult() {
+
+        }
+        function onclbtndiv() {
+
+        }
+
+
+    </script>
 </body>
+
 </html>

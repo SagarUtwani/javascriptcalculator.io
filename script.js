@@ -43,7 +43,7 @@ function onclbtn0() {
     settextareavalue("0")
 }
 function onclbtnadd() {
-    if (issignclicked == false) {
+    if (issignclicked == false && value != "") {
         calcvalue += "+";
         value = "+";
         signoperator = "+";
@@ -54,7 +54,7 @@ function onclbtnadd() {
 
 }
 function onclbtnsub() {
-    if (issignclicked == false) {
+    if (issignclicked == false && value != "") {
         calcvalue += "-";
         value = "-";
         signoperator = "-";
@@ -64,7 +64,7 @@ function onclbtnsub() {
     }
 }
 function onclbtnmult() {
-    if (issignclicked == false) {
+    if (issignclicked == false && value != "") {
         calcvalue += "*";
         value = "*";
         signoperator = "*";
@@ -74,7 +74,7 @@ function onclbtnmult() {
     }
 }
 function onclbtndiv() {
-    if (issignclicked == false) {
+    if (issignclicked == false && value != "") {
         calcvalue += "/";
         value = "/";
         signoperator = "/";
@@ -129,7 +129,9 @@ function AllClear(){
     document.getElementById("txtarea").value = "";
 }
 function SingleClear(){
-    document.getElementById("txtarea").value = value.slice(0,-1);
+    value = value.slice(0,-1);
     calcvalue = calcvalue.slice(0,-1);
+    document.getElementById("txtarea").value = value;
+    
 
 }

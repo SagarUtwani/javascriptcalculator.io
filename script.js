@@ -125,9 +125,11 @@ function AllClear(){
     value = "";
     calcvalue = "";
     signoperator = "";
-    issignclicked == false;
+    issignclicked = false;
     document.getElementById("txtarea").value = "";
 }
 function SingleClear(){
-    
+    document.getElementById("txtarea").value = value.slice(0,-1);
+    calcvalue = calcvalue.slice(0,-1);
+
 }

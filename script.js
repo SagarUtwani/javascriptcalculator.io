@@ -1,6 +1,7 @@
 let value = "";
 let calcvalue = "";
 let signoperator = "";
+let issignclicked = false;
 var valueArr;
 
 function settextareavalue(val) {
@@ -42,37 +43,52 @@ function onclbtn0() {
     settextareavalue("0")
 }
 function onclbtnadd() {
-    calcvalue += "+";
-    value = "+";
-    signoperator = "+";
-    document.getElementById("txtarea").value = value;
-    console.log(calcvalue);
+    if (issignclicked == false) {
+        calcvalue += "+";
+        value = "+";
+        signoperator = "+";
+        document.getElementById("txtarea").value = value;
+        console.log(calcvalue);
+        issignclicked = true;
+    }
+
 }
 function onclbtnsub() {
-    calcvalue += "-";
-    value = "-";
-    signoperator = "-";
-    document.getElementById("txtarea").value = value;
-    console.log(calcvalue);
+    if (issignclicked == false) {
+        calcvalue += "-";
+        value = "-";
+        signoperator = "-";
+        document.getElementById("txtarea").value = value;
+        console.log(calcvalue);
+        issignclicked = true;
+    }
 }
 function onclbtnmult() {
-    calcvalue += "*";
-    value = "*";
-    signoperator = "*";
-    document.getElementById("txtarea").value = value;
-    console.log(calcvalue);
+    if (issignclicked == false) {
+        calcvalue += "*";
+        value = "*";
+        signoperator = "*";
+        document.getElementById("txtarea").value = value;
+        console.log(calcvalue);
+        issignclicked = true
+    }
 }
 function onclbtndiv() {
-    calcvalue += "/";
-    value = "/";
-    signoperator = "/";
-    document.getElementById("txtarea").value = value;
-    console.log(calcvalue);
+    if (issignclicked == false) {
+        calcvalue += "/";
+        value = "/";
+        signoperator = "/";
+        document.getElementById("txtarea").value = value;
+        console.log(calcvalue);
+        issignclicked = true;
+    }
 }
 function onclbtnequal() {
-    signoperator = "";
-    console.log(calcvalue);
-    console.log(parseInt(calcvalue));
+    if (issignclicked == true) {
+        splitvalue();
+        funccalculation();
+        issignclicked = false;
+    }
 }
 
 function splitvalue() {
@@ -89,4 +105,29 @@ function splitvalue() {
         valueArr = calcvalue.split("/");
     }
 }
-
+function funccalculation() {
+    if (signoperator == "+") {
+        document.getElementById("txtarea").value = parseInt(valueArr[0]) + parseInt(valueArr[1]);
+    }
+    else if (signoperator == "-") {
+        document.getElementById("txtarea").value = valueArr[0] - valueArr[1];
+    }
+    else if (signoperator == "*") {
+        document.getElementById("txtarea").value = valueArr[0] * valueArr[1];
+    }
+    else if (signoperator == "/") {
+        document.getElementById("txtarea").value = valueArr[0] / valueArr[1];
+    }
+    value = "";
+    calcvalue = "";
+}
+function AllClear(){
+    value = "";
+    calcvalue = "";
+    signoperator = "";
+    issignclicked == false;
+    document.getElementById("txtarea").value = "";
+}
+function SingleClear(){
+    
+}

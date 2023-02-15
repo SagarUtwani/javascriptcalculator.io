@@ -5,7 +5,7 @@ let issignclicked = false;
 var valueArr;
 
 function settextareavalue(val) {
-    if (value == "+" || value == "-" || value == "x" || value == "/" || value == "*") {
+    if (value == "+" || value == "-" || value == "x" || value == "/" || value == "*" || value == "%") {
         value = "";
     }
     calcvalue += val;
@@ -83,6 +83,16 @@ function onclbtndiv() {
         issignclicked = true;
     }
 }
+function onclbtnmod() {
+    if (issignclicked == false && value != "") {
+        calcvalue += "%";
+        value = "%";
+        signoperator = "%";
+        document.getElementById("txtarea").value = value;
+        console.log(calcvalue);
+        issignclicked = true;
+    }
+}
 function onclbtnequal() {
     if (issignclicked == true) {
         splitvalue();
@@ -104,6 +114,9 @@ function splitvalue() {
     else if (signoperator == "/") {
         valueArr = calcvalue.split("/");
     }
+    else if (signoperator == "%") {
+        valueArr = calcvalue.split("%");
+    }
 }
 function funccalculation() {
     if (signoperator == "+") {
@@ -117,6 +130,9 @@ function funccalculation() {
     }
     else if (signoperator == "/") {
         document.getElementById("txtarea").value = valueArr[0] / valueArr[1];
+    }
+    else if (signoperator == "%") {
+        document.getElementById("txtarea").value = valueArr[0] % valueArr[1];
     }
     value = "";
     calcvalue = "";
